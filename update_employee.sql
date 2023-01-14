@@ -1,6 +1,7 @@
 UPDATE employee SET adresa='Mun. Arad, jud. Arad';
 
 UPDATE employee SET adresa='Mun. Timisoara, Jud. Timis' WHERE id=1;
+
 UPDATE employee SET adresa='Mun. Timisoara, Jud. TImis' where id IN(1,3,5);
 
 UPDATE employee SET adresa='Mun. Buzias, Jud. Timis' where sex='F';
