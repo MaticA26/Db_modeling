@@ -7,13 +7,13 @@ select * from first_view;
 
 ---CREATE SELECT VIEW JOINS
 create view angajati_proiecte_view as
-select e.nume nume_angajat, e.prenume, e.cnp, p.nume as "nume proiect",p.start_date,p.end_date  from employee e
+`select e.nume nume_angajat, e.prenume, e.cnp, p.nume as "nume proiect",p.start_date,p.end_date  from employee e
 inner join operator_drona
 on e.id=operator_drona.employee_id
 inner join operator_drona_projects
 on operator_drona.id=operator_drona_projects.operator_drona_id
 inner join projects p
-on operator_drona_projects.projects_id=p.id;
+on operator_drona_projects.projects_id=p.id;`
 
 select * from angajati_proiecte_view;
 
@@ -72,7 +72,7 @@ on operator_drona_projects.projects_id=p.id
 where t.cnp='1234567890127'
 );
 
--- DELETE FROM gerenated
+-- DELETE FROM generated
 DELETE FROM generated WHERE nume_angajat in(
 					SELECT DISTINCT nume_angajat FROM angajati_proiecte_view WHERE cnp ='1234567890127' 
 					);
